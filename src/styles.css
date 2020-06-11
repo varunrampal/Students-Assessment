@@ -1,0 +1,93 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.center {
+  width: 800px;
+}
+
+/* search section */
+.divsearch {
+  max-width: 100%;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+div.name {
+  font-size: 25px;
+  font-weight: bold;
+}
+#name-input
+ {
+  border: 0;
+  border-bottom: 1px solid lightgray;
+  outline: 0;
+  margin-left: 5px;
+  margin-top: 15px;
+  width: 98%;
+}
+
+
+/* profiles listing section */
+
+img {
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightgrey;
+  width: 100px;
+}
+div.repeat {
+  margin-top: 20px;
+  border-width: 1px;
+  border-bottom-width: 1px;
+  border-bottom-color: lightgrey;
+  border-bottom-style: solid;
+}
+div.details {
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* tags section */
+#tag-input {
+  border: 0;
+  border-bottom: 1px solid lightgray;
+  outline: 0;
+  margin-left: 5px;
+  margin-top: 35px;
+  width: 98%;
+}
+
+.add-tag-input {
+  border: 0;
+  border-bottom: 1px solid lightgray;
+  outline: 0;
+  margin-top: 15px;
+}
+
+#tags li {
+   
+display: inline-block;
+margin-top: 10px;
+margin-left: 10px;
+border-radius: 10px;
+background: #E0E0E0;
+width: 60px;
+height: 40px;
+font-size: 12px;
+border: 1px solid lightgrey;
+vertical-align: top; 
+text-align: center;
+
+}
+
+
+

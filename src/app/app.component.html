@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="center" id="outPopUp">
+    <div class="col-md-12">
+      <div class="card">
+        <!-- search div -->
+        <div class="divsearch">
+          <div>
+            <input
+              id="name-input"
+              placeholder="Search by name"
+              type="text"
+              (keyup)="onSearchByNamekeyup($event.target.value)"
+            />
+          </div>
+          <div>
+            <input
+              id="tag-input"
+              placeholder="Search by tags"
+              type="text"
+              (keyup)="onSearchByTagkeyup($event.target.value)"
+            />
+          </div>
+        </div>
+       
+        <!-- student profiles  -->
+        <div class="card-body" style="overflow-y: scroll; height: 400px;">
+          <div
+            class="row repeat"
+            *ngFor="let student of students; let index = index"
+          >
+            <div class="col-md-2"><img [src]="student.pic" /></div>
+            <div class="col-md-8">
+              <div class="name" id="name">
+                {{ student.firstName | uppercase }}
+                {{ student.lastName | uppercase }}
+                <a class="pull-right expand-btn" (click)="showGrades(index)"
+                  ><i
+                    class="fa fa-plus"
+                    [ngClass]="{
+                      'fa-minus': visibleIndex === index,
+                      'fa-plus': visibleIndex !== index
+                    }"
+                  ></i
+                ></a>
+              </div>
+              <div class="details">
+                <div>Email: {{ student.email }}</div>
+                <div>Company: {{ student.company }}</div>
+                <div>Skill: {{ student.skill }}</div>
+                <div>Average: {{ student.avgGrades }}%</div>
+                <!-- grades  -->
+                <div *ngIf="visibleIndex === index" style="margin-top: 10px;">
+                  <div *ngFor="let grades of student.grades; let i = index">
+                    Test {{ i + 1 }}: {{ grades }}%
+                  </div>
+                  <!-- tags section -->
+                  <section id="tags">
+                    <ul>
+                      <li *ngFor="let tag of student.tags; let i = index">
+                        {{ tag }}
+                      </li>
+                    </ul>
+                  </section>
+                  <div>
+                    <input
+                    id="add-tag-input"
+                      class="add-tag-input"
+                      placeholder="Add a tag"
+                      type="text"
+                      (keydown.enter)="onAddTag($event, index, student.id)"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
